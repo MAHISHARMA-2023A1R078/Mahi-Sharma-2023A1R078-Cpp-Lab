@@ -8,7 +8,7 @@ class Program{  //class declaration
         Marks = M;//local variable h
     }
     public: void Display(){ //function of class
-        cout<<"\n RegNumber= "<<Regno<<"\t"<<"Marks= "<<Marks;
+        cout<<"\n RegNumber= "<<Regno<<"\t"<<"Marks= "<<Marks\n;
     }
 };
 int main(){
