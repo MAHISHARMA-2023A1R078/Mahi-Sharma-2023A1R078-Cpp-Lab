@@ -20,4 +20,9 @@ int main(){
         obj[i].Display(); //calling of Display Function with Array of Object
     }
     //obj[2].Display();  //value stored at this position too we can trace it sequentially...
+    cout<<"\nfor reverse order:\n";
+    for (i=2;i>=0;i--){
+        obj[i].Display();
+    }
+    return 0;
 }
