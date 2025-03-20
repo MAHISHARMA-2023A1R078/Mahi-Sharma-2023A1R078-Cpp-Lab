@@ -2,7 +2,7 @@
 static function Fun2(), create a default constructor of class, parametrized constructor of class, 
 destructor of class, create normal instance of class,
 static instance of class, access static variable and normal variable from Fun1() and Fun2(). define with comments, the output 
-and behaviour of each variable, function, object in this program.*/
+and behaviour of each variable, function, object in this program.   20/03/25 */
 
 #include<iostream>
 using namespace std;
