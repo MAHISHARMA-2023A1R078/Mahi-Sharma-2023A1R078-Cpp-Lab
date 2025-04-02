@@ -4,8 +4,9 @@ In Inheritance we use existing class features into new class but our new class m
 Types of Inheritance in cpp
 1. Single level Inheritance --java and python  ye dono hi hote in java and python 
 2. Multi level Inheritance --java and python
-3. Hybrid Inheritance 
-4. Hierarchichal Inheritance 
+3. Multiple Inheritance 
+4. Hybrid Inheritance 
+5. Hierarchichal Inheritance 
 In inheritance we create instance of child class only
 base class known as parent class or super class */
 
