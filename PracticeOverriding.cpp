@@ -19,27 +19,44 @@ using namespace std;
 class Emloyee_Management_System{
     public: float  BS, WD,Salary, TA,DA;
     public:  virtual void SalaryCalculate(){
-        cout<<"\ncalculate the employee salary, accept basic salary from user";
-       cin>>BS;
-        cout<<"\nthe no of working days";
-      cin>>WD;
-        cout<<WD;
-        cout<<"\nSalary";
-        Salary=(BS/30)*WD;
-        cout<<Salary;
+    cout<<"\ncalculate the employee salary, accept basic salary from user";
+    cin>>BS;
+    cout<<"\nthe no of working days";
+    cin>>WD;
+    cout<<WD;
+    cout<<"\nEmployee Salary ";
+    Salary=(BS/30)*WD;
+    cout<<Salary;
     }
 };
 class Manager: public Emloyee_Management_System{
 
     public: void SalaryCalculate() override{
-        cout<<"\ncalculate the employee salary, accept basic salary from user";
-       cin>>BS;
-        cout<<"\nenter the no of working days";
-      cin>>WD;
-      cout<<"\nCalculate Manager Salary ";
-        Salary=(BS/30)*WD;
+    cout<<"\ncalculate the manager, accept basic salary from user";
+    cin>>BS;
+    cout<<"\nenter the no of working days";
+    cin>>WD;
+    cout<<"\nCalculate Manager Salary ";
+    Salary=(BS/30)*WD;
     cout<<Salary;
     TA=BS*0.03;
+    cout<<"\nTA is "<<TA;
+    DA=BS*0.10;
+    cout<<"\nDA is "<<DA;
+    }
+
+};
+class Developer: public Emloyee_Management_System{
+
+    public: void SalaryCalculate() override{
+    cout<<"\ncalculate the developer salary, accept basic salary from user";
+    cin>>BS;
+    cout<<"\nenter the no of working days";
+    cin>>WD;
+    cout<<"\nCalculate developer Salary ";
+    Salary=(BS/30)*WD;
+    cout<<Salary;
+    TA=BS*0.05;
     cout<<"\nTA is "<<TA;
     DA=BS*0.12;
     cout<<"\nDA is "<<DA;
@@ -50,16 +67,14 @@ class Accountant: public Emloyee_Management_System{
    
     public: void SalaryCalculate() {
 
-        cout<<"\ncalculate the employee salary, accept basic salary from user";
-       cin>>BS;
-        cout<<"\nenter the no of working days";
-     cin>>WD;
-        Salary=(BS/30)*WD;
+    cout<<"\ncalculate the Accountant ssalary, accept basic salary from user";
+    cin>>BS;
+    cout<<"\nenter the no of working days";
+    cin>>WD;
+    Salary=(BS/30)*WD;
     cout<<"\nCalculate Accountant Salary "<<Salary;
-    cout<<"\nbasic salary"<<BS;
     TA=0.04*BS;
     cout<<"\nTA is "<<TA;
-  
     DA=0.09*BS;
     cout<<"\nDA is "<<DA;
 
@@ -70,4 +85,5 @@ int main(){
     obj.SalaryCalculate();
     return 0;
 }
+
 
