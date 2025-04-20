@@ -74,7 +74,7 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //     cout<<"\nenter the marks obtained in the selected course i.e. "<<su;
 //     cin>>markPG;
 // }};
-// class Diploma_Course : public PG_Course,public UG_Course{
+// class Diploma_Course {
 //     public: int  marDiploma;
 //     public: string choi; string subj; 
 //     public: string CourseList(){
@@ -92,13 +92,13 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //         cout<<"Invalid";
 //     }
 // }
-// public: void MarObtained(string selcCourse){
+// public: void MarrObtained(string selcCourse){
 //     subj=selcCourse;
 //     cout<<"\nenter the marks obtained in the selected course i.e. "<<subj;
 //     cin>>marDiploma;
 // }
 // };
-// class Result : public UG_Course,public PG_Course{
+// class Result : public UG_Course,public PG_Course, public Diploma_Course{
 //    public: int selec, points; int poin; int poi;
 //     public: int  SelectionCriteria(){
 //     // e. Create a funciton with name SelectionCriteria(), here in this funciton display a Selection criteria for the post.
@@ -111,7 +111,7 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //     cout<<"\n5 points for percentage more than 80 percent in PG";
 //     cout<<"\n5 points for percentage more than 80 percent in Diploma ";
 //     cout<<"\nthe points student got= ";
-//     points=marksUG + markPG + marDiploma;
+//     points=marksUG + markPG + Diploma_Course::marDiploma;
 //     per=points/500*100;
 //     if(per>=80){
 //         cout<<per;
@@ -149,15 +149,12 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //     re=obj.SpecializationList();
 //     obj.MarObtained(re);
 //     string res;
-//     //res=obj.CourseList();
-//     //obj.MarObtained(res);
+//     res=obj.CourseList();
+//     obj.MarrObtained(res);
 //     int rees;
 //     rees=obj.SelectionCriteria();
 //     obj.FinalResult(rees);
-
 //    return 0;
-
-
 // }
 
 #include<iostream>
