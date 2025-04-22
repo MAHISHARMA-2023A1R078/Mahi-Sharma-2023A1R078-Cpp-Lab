@@ -156,7 +156,6 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //     obj.FinalResult(rees);
 //    return 0;
 // }
-
 #include<iostream>
 #include<string>
 using namespace std;
@@ -245,16 +244,33 @@ public:
     int totalPoints = 0;
 
     int SelectionCriteria() {
-        if (marksUG >= 80) totalPoints += 5;
-        if (marksPG >= 80) totalPoints += 5;
-        if (marksDiploma >= 80) totalPoints += 5;
+        int ugPoints = 0, pgPoints = 0, dipPoints = 0;
 
         cout << "\nSelection Criteria:";
-        cout << "\nPoints for UG marks >= 80: " << (marksUG >= 80 ? 5 : 0);
-        cout << "\nPoints for PG marks >= 80: " << (marksPG >= 80 ? 5 : 0);
-        cout << "\nPoints for Diploma marks >= 80: " << (marksDiploma >= 80 ? 5 : 0);
-        cout << "\nTotal Points: " << totalPoints << " out of 15\n";
 
+        if (marksUG >= 80) {
+            ugPoints = 5;
+            cout << "\nPoints for UG marks >= 80: 5";
+        } else {
+            cout << "\nPoints for UG marks < 80: 0";
+        }
+
+        if (marksPG >= 80) {
+            pgPoints = 5;
+            cout << "\nPoints for PG marks >= 80: 5";
+        } else {
+            cout << "\nPoints for PG marks < 80: 0";
+        }
+
+        if (marksDiploma >= 80) {
+            dipPoints = 5;
+            cout << "\nPoints for Diploma marks >= 80: 5";
+        } else {
+            cout << "\nPoints for Diploma marks < 80: 0";
+        }
+
+        totalPoints = ugPoints + pgPoints + dipPoints;
+        cout << "\nTotal Points: " << totalPoints << " out of 15\n";
         return totalPoints;
     }
 
