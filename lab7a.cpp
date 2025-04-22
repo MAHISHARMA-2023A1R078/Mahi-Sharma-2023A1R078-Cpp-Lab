@@ -156,6 +156,8 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //     obj.FinalResult(rees);
 //    return 0;
 // }
+
+
 #include<iostream>
 using namespace std;
 
@@ -168,7 +170,8 @@ public:
     string SubjectList() {
         cout << "\nUG Subjects: \n1. Maths\n2. Science\n3. IT\n4. Physics";
         cout << "\nEnter UG subject: ";
-        getline(cin, ug_subject);
+        //getline(cin, ug_subject);
+        cin>>ug_subject;
 
         if (ug_subject == "Maths" || ug_subject == "Science" || ug_subject == "IT" || ug_subject == "Physics") {
             return ug_subject;
@@ -181,7 +184,7 @@ public:
     void MarksObtained(string selected_course) {
         cout << "Enter marks in UG course (" << selected_course << "): ";
         cin >> marksUG;
-        cin.ignore(); // clear input buffer
+        
     }
 };
 
@@ -207,7 +210,7 @@ public:
     void MarksObtained(string selected_course) {
         cout << "Enter marks in PG course (" << selected_course << "): ";
         cin >> marksPG;
-        cin.ignore();
+       
     }
 };
 
@@ -233,7 +236,7 @@ public:
     void MarksObtained(string selected_course) {
         cout << "Enter marks in Diploma course (" << selected_course << "): ";
         cin >> marksDiploma;
-        cin.ignore();
+        
     }
 };
 
@@ -282,8 +285,6 @@ public:
         }
     }
 };
-
-// Main Function
 int main() {
     Result r;
     string ug, pg, dip;
