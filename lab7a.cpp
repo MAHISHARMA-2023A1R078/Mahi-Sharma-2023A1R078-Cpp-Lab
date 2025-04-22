@@ -154,9 +154,14 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //     int rees;
 //     rees=obj.SelectionCriteria();
 //     obj.FinalResult(rees);
+
 //    return 0;
+
+
 // }
 
+
+//-------------------------------****Multiple Inheritance****
 
 #include<iostream>
 using namespace std;
@@ -285,6 +290,8 @@ public:
         }
     }
 };
+
+// Main Function
 int main() {
     Result r;
     string ug, pg, dip;
@@ -306,3 +313,292 @@ int main() {
 
     return 0;
 }
+
+// -------------------------------------------------
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// // UG Course Class
+// class UG_Course {
+// public:
+//     int marksUG;
+//     string ug_subject;
+
+//     string SubjectList() {
+//         cout << "\nUG Subjects: \n1. Maths\n2. Science\n3. IT\n4. Physics";
+//         cout << "\nEnter UG subject: ";
+//         getline(cin, ug_subject);
+
+//         if (ug_subject == "Maths" || ug_subject == "Science" || ug_subject == "IT" || ug_subject == "Physics") {
+//             return ug_subject;
+//         } else {
+//             cout << "Invalid UG subject\n";
+//             return "";
+//         }
+//     }
+
+//     void MarksObtained(string selected_course) {
+//         cout << "Enter marks in UG course (" << selected_course << "): ";
+//         cin >> marksUG;
+//         cin.ignore(); // clear input buffer
+//     }
+// };
+
+// // PG Course Class
+// class PG_Course {
+// public:
+//     int marksPG;
+//     string pg_subject;
+
+//     string SpecializationList() {
+//         cout << "\nPG Subjects: \n1. RDBMS\n2. RPA\n3. COA\n4. C++";
+//         cout << "\nEnter PG subject: ";
+//         cin >> pg_subject;
+
+//         if (pg_subject == "RDBMS" || pg_subject == "RPA" || pg_subject == "COA" || pg_subject == "C++") {
+//             return pg_subject;
+//         } else {
+//             cout << "Invalid PG subject\n";
+//             return "";
+//         }
+//     }
+
+//     void MarksObtained(string selected_course) {
+//         cout << "Enter marks in PG course (" << selected_course << "): ";
+//         cin >> marksPG;
+//         cin.ignore();
+//     }
+// };
+
+// // Diploma Course Class
+// class Diploma_Course {
+// public:
+//     int marksDiploma;
+//     string diploma_subject;
+
+//     string CourseList() {
+//         cout << "\nDiploma Subjects: \n1. BEEE\n2. AI\n3. ML\n4. DataScience";
+//         cout << "\nEnter Diploma subject: ";
+//         cin >> diploma_subject;
+
+//         if (diploma_subject == "BEEE" || diploma_subject == "AI" || diploma_subject == "ML" || diploma_subject == "DataScience") {
+//             return diploma_subject;
+//         } else {
+//             cout << "Invalid Diploma subject\n";
+//             return "";
+//         }
+//     }
+
+//     void MarksObtained(string selected_course) {
+//         cout << "Enter marks in Diploma course (" << selected_course << "): ";
+//         cin >> marksDiploma;
+//         cin.ignore();
+//     }
+// };
+
+// // Result Class with Multiple Inheritance
+// class Result : public UG_Course, public PG_Course, public Diploma_Course {
+// public:
+//     int totalPoints = 0;
+
+//     int SelectionCriteria() {
+//         if (marksUG >= 80) totalPoints += 5;
+//         if (marksPG >= 80) totalPoints += 5;
+//         if (marksDiploma >= 80) totalPoints += 5;
+
+//         cout << "\nSelection Criteria:";
+//         cout << "\nPoints for UG marks >= 80: " << (marksUG >= 80 ? 5 : 0);
+//         cout << "\nPoints for PG marks >= 80: " << (marksPG >= 80 ? 5 : 0);
+//         cout << "\nPoints for Diploma marks >= 80: " << (marksDiploma >= 80 ? 5 : 0);
+//         cout << "\nTotal Points: " << totalPoints << " out of 15\n";
+
+//         return totalPoints;
+//     }
+
+//     void FinalResult(int points) {
+//         cout << "\nFinal Result:\n";
+//         if (points >= 12) {
+//             cout << "Candidate is QUALIFIED for Software Developer Post\n";
+//         } else {
+//             cout << "Candidate is NOT QUALIFIED for Software Developer Post\n";
+//         }
+//     }
+// };
+
+// // Main Function
+// int main() {
+//     Result r;
+//     string ug, pg, dip;
+
+//     cout << "\n--- UG Course ---";
+//     ug = r.SubjectList();
+//     r.UG_Course::MarksObtained(ug); // specify base class due to same function names
+
+//     cout << "\n--- PG Course ---";
+//     pg = r.SpecializationList();
+//     r.PG_Course::MarksObtained(pg);
+
+//     cout << "\n--- Diploma Course ---";
+//     dip = r.CourseList();
+//     r.Diploma_Course::MarksObtained(dip);
+
+//     int pts = r.SelectionCriteria();
+//     r.FinalResult(pts);
+
+//     return 0;
+// }
+
+
+
+// ****MultiLevel Inheritance****
+
+// #include <iostream>
+// using namespace std;
+
+// // UG Course Class (Base Class)
+// class UG_Course {
+// public:
+//     int marksUG;
+//     string ug_subject;
+
+//     string SubjectList() {
+//         cout << "\nUG Subjects: \n1. Maths\n2. Science\n3. IT\n4. Physics";
+//         cout << "\nEnter UG subject: ";
+//         cin >> ug_subject;
+
+//         if (ug_subject == "Maths" || ug_subject == "Science" || ug_subject == "IT" || ug_subject == "Physics") {
+//             return ug_subject;
+//         } else {
+//             cout << "Invalid UG subject\n";
+//             return "";
+//         }
+//     }
+
+//     void MarksObtained(string selected_course) {
+//         cout << "Enter marks in UG course (" << selected_course << "): ";
+//         cin >> marksUG;
+//     }
+// };
+
+// // PG Course Class (Derived from UG_Course)
+// class PG_Course : public UG_Course {
+// public:
+//     int marksPG;
+//     string pg_subject;
+
+//     string SpecializationList() {
+//         cout << "\nPG Subjects: \n1. RDBMS\n2. RPA\n3. COA\n4. C++";
+//         cout << "\nEnter PG subject: ";
+//         cin >> pg_subject;
+
+//         if (pg_subject == "RDBMS" || pg_subject == "RPA" || pg_subject == "COA" || pg_subject == "C++") {
+//             return pg_subject;
+//         } else {
+//             cout << "Invalid PG subject\n";
+//             return "";
+//         }
+//     }
+
+//     void MarksObtainedPG(string selected_course) {
+//         cout << "Enter marks in PG course (" << selected_course << "): ";
+//         cin >> marksPG;
+//     }
+// };
+
+// // Diploma Course Class (Derived from PG_Course)
+// class Diploma_Course : public PG_Course {
+// public:
+//     int marksDiploma;
+//     string diploma_subject;
+
+//     string CourseList() {
+//         cout << "\nDiploma Subjects: \n1. BEEE\n2. AI\n3. ML\n4. DataScience";
+//         cout << "\nEnter Diploma subject: ";
+//         cin >> diploma_subject;
+
+//         if (diploma_subject == "BEEE" || diploma_subject == "AI" || diploma_subject == "ML" || diploma_subject == "DataScience") {
+//             return diploma_subject;
+//         } else {
+//             cout << "Invalid Diploma subject\n";
+//             return "";
+//         }
+//     }
+
+//     void MarksObtainedDiploma(string selected_course) {
+//         cout << "Enter marks in Diploma course (" << selected_course << "): ";
+//         cin >> marksDiploma;
+//     }
+// };
+
+// // Result Class (Derived from Diploma_Course)
+// class Result : public Diploma_Course {
+// public:
+//     int totalPoints = 0;
+
+//     int SelectionCriteria() {
+//         int ugPoints = 0, pgPoints = 0, dipPoints = 0;
+
+//         cout << "\nSelection Criteria for Software Developer Post:\n";
+
+//         if (marksUG >= 80) {
+//             ugPoints = 5;
+//             cout << "UG Marks >= 80: +5 points\n";
+//         } else {
+//             cout << "UG Marks < 80: +0 points\n";
+//         }
+
+//         if (marksPG >= 80) {
+//             pgPoints = 5;
+//             cout << "PG Marks >= 80: +5 points\n";
+//         } else {
+//             cout << "PG Marks < 80: +0 points\n";
+//         }
+
+//         if (marksDiploma >= 80) {
+//             dipPoints = 5;
+//             cout << "Diploma Marks >= 80: +5 points\n";
+//         } else {
+//             cout << "Diploma Marks < 80: +0 points\n";
+//         }
+
+//         totalPoints = ugPoints + pgPoints + dipPoints;
+//         cout << "Total Points: " << totalPoints << "/15\n";
+//         return totalPoints;
+//     }
+
+//     void FinalResult(int points) {
+//         cout << "\nFinal Result:\n";
+//         if (points >= 12) {
+//             cout << "Candidate is QUALIFIED for Software Developer Post\n";
+//         } else {
+//             cout << "Candidate is NOT QUALIFIED for Software Developer Post\n";
+//         }
+//     }
+// };
+
+// // Main Function
+// int main() {
+//     Result r;
+
+//     // UG
+//     cout << "\n--- UG Course ---";
+//     string ug = r.SubjectList();
+//     r.MarksObtained(ug);
+
+//     // PG
+//     cout << "\n--- PG Course ---";
+//     string pg = r.SpecializationList();
+//     r.MarksObtainedPG(pg);
+
+//     // Diploma
+//     cout << "\n--- Diploma Course ---";
+//     string dip = r.CourseList();
+//     r.MarksObtainedDiploma(dip);
+
+//     // Final Selection
+//     int pts = r.SelectionCriteria();
+//     r.FinalResult(pts);
+
+//     return 0;
+// }
