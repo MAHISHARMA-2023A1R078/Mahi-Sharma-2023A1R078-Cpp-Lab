@@ -157,7 +157,6 @@ f. Create a funciton with name FinalResult(), candiates scored more 12 ponits ar
 //    return 0;
 // }
 #include<iostream>
-#include<string>
 using namespace std;
 
 // UG Course Class
