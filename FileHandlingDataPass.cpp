@@ -1,7 +1,5 @@
 /* 14/05/25
 Program to read data from one file and copy that data to another file */
-/* 14/05/25
-Program to read data from one file and copy that data to another file */
 #include<iostream>
 #include<fstream>  
 using namespace std;
